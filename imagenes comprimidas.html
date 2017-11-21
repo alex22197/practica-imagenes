@@ -1,0 +1,57 @@
+
+<html>
+<head>
+	<script type='text/javascript'>
+//<![CDATA[
+var startTime = new Date();
+function showElapsedTime() {
+var testSiteUrl = location.href;;
+var testSiteString = String(testSiteUrl).slice(testSiteUrl.indexOf("www"));
+var endTime = new Date();
+var elapsedTime = Number(endTime-startTime);
+var browser=navigator.userAgent;
+var platform=navigator.platform;
+var msgString = "Tiempo de carga<br/> " + Number(elapsedTime/1000) + " segundos (" + elapsedTime + " ms)<br/><span>Navegador " + browser + "</span>";
+document.getElementById("mostrarTiempo").innerHTML = msgString;
+}
+onload=function() {showElapsedTime();}
+//]]>
+</script>
+<style>
+#mostrarTiempo {
+border: 1px dotted #456;
+color: black;
+font-size: 12px;
+padding: 10px;
+text-align: center;
+}
+#mostrarTiempo span {
+display: block;
+font-size: 11px;
+}
+</style>
+</head>
+<body>
+	<img src="imagenes/bosqueSinComprimir.jpg" width=800px height=600px> <h2>Imagen sin comprimir, su tamaño es: 7,48 MB</h2>
+</br> </br> </br>
+	<img src="imagenes/bosqueComprimido.jpg" width=800px height=600px> <h2>Imagen comprimida, su tamaño es: 4,19 MB</h2>
+<h3>Como podemos observar, apenas hay diferencia entre las 2 imágenes y hay casi 3 MB de diferencia. He reducido de tamaño la imagen con una herramienta llamada Compressor.io la cual es muy sencilla de usar y muy intuitiva.</h3>
+<img src="imagenes/tiemposdecarga.png"><h3>Como vemos en esta imagen, la diferencia de los tiempos de carga es bastante grande y la diferencia de calidad de las imagenes es irrisoria. Por lo tanto, será interesante comprimir todas las fotos jpg de nuestra página para reducir en gran cantidad los tiempos de carga.</h3>
+<br><br><br><br><br>
+	<img src="imagenes/hombreSinComprimir.png" width=800px height=600px> <h2>Zoom a la imagen sin comprimir</h2>
+	<br>
+	<img src="imagenes/hombreComprimido.png" width=800px height=600px><h2>Zoom a la imagen comprimida</h2>
+	<h3>
+		Para comprobar si la pérdida de calidad era grande he hecho zoom en ambas imágenes y como podemos observar apenas hay diferencia de resolución.
+
+	</h3><br><br><br><br><br>
+	<h1>VECTORIZACIÓN DE ICONOS</h1>
+
+
+	<img src="imagenes/sinVectorizar.png" width=200px height=200px><h2>Icono sin vectorizar, después de comprimirlo su tamaño es 2KB</h2><br><br>
+	<img src="imagenes/vectorizada.svgz" width=200px height=200px><h2>Icono vectorizado, después de comprimirlo su tamaño es también 2KB </h2><br><br><br>
+	<img src="imagenes/tiemposdecarga2.png"> <h2>En este caso, los tiempos de carga de los dos iconos son iguales por lo tanto, en mi opinión, será mejor usar el icono vectorizado ya que la calidad es visiblemente mejor. </h2>
+	<div id="mostrarTiempo">Cargando ...</div>
+
+</body>
+</html>
